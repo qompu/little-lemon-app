@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "little-lemon-app",
-    "slug": "little-lemon-app",
+    "name": "little-lemon-app-v2",
+    "slug": "snack-eefad101-0f74-4a9c-9d59-8b4de2514d74",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,6 +10,9 @@
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,7 +23,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
