@@ -53,26 +53,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#f5f5f5',
-    padding: 10,
-  },
   logo: {
     width: 250,
     height: 50,
     resizeMode: "contain",
-  },
-  headerText: {
-  marginTop: 100,
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  moduleText: {
-    margin: 20,
-    fontFamily: 'Karla',
-    fontSize: 18,
   },
    button: {
     backgroundColor: '#495E57',
