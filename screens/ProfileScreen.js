@@ -68,18 +68,22 @@ const ProfileScreen = () => {
    await AsyncStorage.setItem('phone', phone);
    Alert.alert('Profile Updated!');
    } catch (error) {
-   // handle error here
+   console.log('error at handleUpdate');
    }
  };
 
- const handleLogout = async () => {
-   try {
-   await AsyncStorage.clear();
-   navigation.navigate('Onboarding');
-   } catch (error) {
- // handle error here
-   }
- };
+const handleLogout = async () => {
+ try {
+ await AsyncStorage.clear();
+ setName('');
+ setEmail('');
+ setPhone('');
+ navigation.navigate('Onboarding');
+ } catch (error) {
+ console.log('error at handleLogout');
+ }
+};
+
 
  return (
  <View style={styles.container}>
