@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, Image, StyleSheet, TouchableOpacity  } from 'react-native';
+import { View, Text, Button, Image, StyleSheet, ScrollView, TouchableOpacity  } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import DisplayMenu from '../DisplayMenu'
 //import DisplayMenu from '../DisplayMenu2'
+import Header from '../include/Header'
 
 const HomeScreen = ({ navigation }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const handlePress = () => {navigation.navigate('Profile'); };
-  const handlePress2 = () => {navigation.navigate('Onboarding'); };
+
 
 
   useEffect(() => {
@@ -31,18 +31,15 @@ const HomeScreen = ({ navigation }) => {
   }, []);
 
   return ( 
-
  
     <View style={styles.container}> 
-            <Image
-             source={require('../logo.png')}
-             style={styles.logo}
-            />
-             <TouchableOpacity style={styles.button} onPress={handlePress}>
-              <Text style={styles.buttonText}>Go to Profile</Text>
-            </TouchableOpacity>
-      
-            <DisplayMenu />          
+      <Header style={styles} navigation={navigation} profileButton={true} />
+
+      <View style={styles.container}> 
+      <DisplayMenu /> 
+      </View>
+       
+               
       
     </View>
   );
@@ -53,26 +50,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  logo: {
-    width: 250,
-    height: 50,
-    resizeMode: "contain",
-  },
-   button: {
-    backgroundColor: '#495E57',
-    padding: 10,
-    borderRadius: 5,
-    width:200,
-    marginLeft:100,
-    marginTop:10,
-    marginBottom:10,
-    textAlign: 'center',
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-  },
+
   
 });
 

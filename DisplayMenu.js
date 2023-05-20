@@ -53,7 +53,7 @@ const DisplayMenu = () => {
  useEffect(() => {
     const timeoutId = setTimeout(() => {
     setDebouncedSearchText(searchText);
-    }, 1000);
+    }, 1000);  // delay used for system to stabilize
  return () => clearTimeout(timeoutId);
   }, [searchText]);
 
@@ -74,21 +74,21 @@ const DisplayMenu = () => {
    <Text style={styles.headerButton} onPress={() => handleCategoryPress('desserts')}>Desserts</Text>
    </View>
    <TextInput
-   style={styles.searchInput}
-   onChangeText={handleSearchChange}
-   value={searchText}
-   placeholder="Search"
+      style={styles.searchInput}
+      onChangeText={handleSearchChange}
+      value={searchText}
+      placeholder="Search"
    />
    <FlatList
-   data={filteredData}
-   keyExtractor={(item) => item.id.toString()}
-   renderItem={({ item }) => (
-   <View style={styles.listItem}>
-   <Text style={styles.listItemName}>{item.name}</Text>
-   <Text>{item.description}</Text>
-   <Text>{item.price}</Text>
-   </View>
-   )}
+      data={filteredData}
+      keyExtractor={(item) => item.id.toString()}
+      renderItem={({ item }) => (
+      <View style={styles.listItem}>
+      <Text style={styles.listItemName}>{item.name}</Text>
+      <Text>{item.description}</Text>
+      <Text>{item.price}</Text>
+      </View>
+      )}
    />
    </View>
  );
